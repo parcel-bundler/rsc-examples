@@ -30,7 +30,7 @@ export async function createTodo(formData: FormData) {
   let title = formData.get('title');
   let description = formData.get('description');
   let dueDate = formData.get('dueDate');
-  let id = Math.max(...todos.map(todo => todo.id)) + 1;
+  let id = todos.length > 0 ? Math.max(...todos.map(todo => todo.id)) + 1 : 0;
   todos.push({
     id,
     title: typeof title === 'string' ? title : '',

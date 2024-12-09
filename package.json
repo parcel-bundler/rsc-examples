@@ -1,0 +1,21 @@
+{
+  "name": "parcel-rsc",
+  "private": true,
+  "workspaces": [
+    "examples/*"
+  ],
+  "@parcel/resolver-default": {
+    "packageExports": true
+  },
+  "dependencies": {
+    "@types/parcel-env": "^0.0.6",
+    "@types/express": "*",
+    "@types/node": "^22.10.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "process": "^0.11.10"
+  },
+  "@parcel/bundler-default": {
+    "minBundleSize": 0
+  }
+}

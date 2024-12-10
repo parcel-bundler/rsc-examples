@@ -292,8 +292,6 @@ function runModule(
   require: (id: string) => any,
   parcelRequire: (id: string) => any
 ) {
-  // Node's vm module still doesn't support dynamic import without --experimental-vm-modules.
-  code = code.replace(/import\((parcelRequire.+)\)/g, 'parcelRequire.loadBundle($1)');
   let moduleFunction = vm.compileFunction(code, ['exports', 'require', 'module', '__dirname', '__filename', 'parcelRequire'], {
     filename,
   });

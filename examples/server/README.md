@@ -18,7 +18,7 @@ Server component entries must render the `<Resources>` component from `@parcel/r
 
 ### src/client.tsx
 
-This is the main client entrypoint. It uses the Parcel-specific `"use client-entry"` directive to mark that it should only run on the client, and not on the server (even during SSR). THe client is responsible for hydrating the initial page, and intercepting link clicks and navigations to perform client side routing.
+This is the main client entrypoint, imported from each page. It uses the Parcel-specific `"use client-entry"` directive to mark that it should only run on the client, and not on the server (even during SSR). The client is responsible for hydrating the initial page, and intercepting link clicks and navigations to perform client side routing.
 
 ### src/actions.ts
 

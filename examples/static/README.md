@@ -21,3 +21,7 @@ See the [client side routing](../server/README.md#client-side-routing) section o
 ### components/Counter.tsx
 
 This is a client component.
+
+### components/Nav.tsx
+
+This is a server component that renders a list of links to all of the pages on the site. This is passed as a prop to each entry page component by the SSG packager plugin, and then through to this component.

@@ -217,8 +217,8 @@ async function loadBundleUncached(
   };
 
   // @ts-ignore
-  parcelRequire.loadBundle = async (filePath: string) => {
-    let bundle = bundleGraph.getBundles().find(b => path.join(b.target.distDir, b.name) === filePath);
+  parcelRequire.load = async (filePath: string) => {
+    let bundle = bundleGraph.getBundles().find(b => b.name === filePath);
     if (bundle) {
       let {assets: subAssets} = await loadBundle(bundle, bundleGraph, getInlineBundleContents);
       for (let [id, [asset, code]] of subAssets) {

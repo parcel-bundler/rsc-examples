@@ -23,5 +23,3 @@ This is the server entrypoint, built using Express. In its route handler, it cre
 ### server/RSC.tsx
 
 This is a server component. Since it is not rendering a full page, it does not render the `<html>` element, just the embedded content. It is marked with the Parcel-specific `"use server-entry"` directive, which creates a code splitting entrypoint. Common dependencies between entries are extracted into [shared bundles](https://parceljs.org/features/code-splitting/#shared-bundles).
-
-Server component entries must render the `<Resources>` component from `@parcel/runtime-rsc`. This is an automatically generated React component that renders the necessary `<script>` and `<link rel="stylesheet">` elements needed to render the component. This includes injecting the script containing the necessary client components for the page, as well as any CSS imported by both client and server components. React will automatically hoist these resources into the `<head>` during rendering on the client.

@@ -27,7 +27,7 @@ startTransition(() => {
 // and in a React transition, stream in the new page. Once complete, we'll pushState to 
 // update the URL in the browser.
 async function navigate(pathname: string, push = false) {
-  let res = fetch(pathname + '.rsc');
+  let res = fetch(pathname.replace('.html', '.rsc'));
   let root = await createFromFetch<ReactElement>(res);
   startTransition(() => {
     updateRoot!(root, () => {
@@ -63,5 +63,11 @@ document.addEventListener('click', e => {
 
 // When the user clicks the back button, navigate with RSC.
 window.addEventListener('popstate', e => {
+  navigate(location.pathname);
+});
+
+// Intercept HMR window reloads, and do it with RSC instead.
+window.addEventListener('parcelhmrreload', e => {
+  e.preventDefault();
   navigate(location.pathname);
 });

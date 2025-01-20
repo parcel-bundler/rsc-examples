@@ -9,6 +9,11 @@ declare module 'react-server-dom-parcel/client' {
   export function setServerCallback(cb: CallServerCallback): void;
 }
 
+declare module 'react-server-dom-parcel/client.edge' {
+  export function createFromReadableStream<T>(stream: ReadableStream): Promise<T>;
+  export function encodeReply(value: any): Promise<string | URLSearchParams | FormData>;
+}
+
 declare module 'react-server-dom-parcel/server.edge' {
   export function renderToReadableStream(value: any): ReadableStream;
   export function loadServerAction(id: string): Promise<(...args: any[]) => any>;
@@ -17,5 +22,10 @@ declare module 'react-server-dom-parcel/server.edge' {
 }
 
 declare module '@parcel/runtime-rsc' {
-  export function Resources(): JSX.Element;
+  import {ReactElement} from 'react';
+  export function Resources(): ReactElement;
+}
+
+declare module 'react-dom/server.edge' {
+  export * from 'react-dom/server';
 }

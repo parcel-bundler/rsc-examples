@@ -88,7 +88,7 @@ setServerCallback(async function(id: string, args: any[]) {
     },
     body: await encodeReply(args),
   });
-  const {result, root} = await createFromFetch<{root: JSX.Element, result: any}>(response);
+  const {result, root} = await createFromFetch<{root: ReactElement, result: any}>(response);
   startTransition(() => updateRoot!(root));
   return result;
 });

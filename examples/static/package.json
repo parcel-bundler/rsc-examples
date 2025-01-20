@@ -6,19 +6,18 @@
   "targets": {
     "default": {
       "context": "react-server",
-      "outputFormat": "commonjs",
       "scopeHoist": false
     }
   },
   "scripts": {
-    "start": "parcel --config .parcelrc",
+    "start": "parcel",
     "build": "parcel build"
   },
   "dependencies": {
-    "react": "^19",
-    "react-dom": "^19",
-    "react-server-dom-parcel": "^0.0.1",
-    "rsc-html-stream": "^0.0.4",
-    "ws": "^8.8.1"
+    "@parcel/config-react-static": "canary",
+    "react": "canary",
+    "react-dom": "canary",
+    "react-server-dom-parcel": "canary",
+    "rsc-html-stream": "^0.0.4"
   }
 }

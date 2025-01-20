@@ -8,14 +8,14 @@
     "packageExports": true
   },
   "dependencies": {
-    "@parcel/config-default": "dev",
-    "@parcel/runtime-rsc": "dev",
+    "@parcel/config-default": "canary",
+    "@parcel/runtime-rsc": "canary",
     "@types/parcel-env": "^0.0.6",
     "@types/express": "*",
     "@types/node": "^22.10.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "parcel": "dev",
+    "parcel": "canary",
     "process": "^0.11.10"
   },
   "@parcel/bundler-default": {

@@ -1,5 +1,5 @@
-import {ReactElement, Suspense, use} from 'react';
-import {createFromFetch} from 'react-server-dom-parcel/client';
+import {ReactElement, Suspense} from 'react';
+import {fetchRSC} from '@parcel/rsc/client';
 
 export function App() {
   return (
@@ -16,10 +16,6 @@ let request: Promise<ReactElement> | null = null;
 
 function RSC() {
   // Simple cache to make sure we only fetch once.
-  if (!request) {
-    let res = fetch('http://localhost:3001');
-    request = createFromFetch(res);
-  }
-
-  return use(request);
+  request ??= fetchRSC('http://localhost:3001');
+  return request;
 }

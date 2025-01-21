@@ -1,8 +1,6 @@
 // Server dependencies.
 import express from 'express';
-import {Readable} from 'node:stream';
-import type { ReadableStream as NodeReadableStream } from 'stream/web';
-import {renderToReadableStream} from 'react-server-dom-parcel/server.edge';
+import {renderRSC} from '@parcel/rsc/node';
 
 // Page components. These must have "use server-entry" so they are treated as code splitting entry points.
 import {RSC} from './RSC';
@@ -19,19 +17,10 @@ app.use(function (req, res, next) {
 app.get('/', async (req, res) => {
   // Render the server component to an RSC payload.
   // Since our app is initially client rendered, we don't need to SSR it to HTML.
-  let stream = renderToReadableStream(<RSC />);
+  let stream = renderRSC(<RSC />);
   res.set('Content-Type', 'text/x-component');
-  Readable.fromWeb(stream as NodeReadableStream).pipe(res);
+  stream.pipe(res);
 });
 
-let server = app.listen(3001);
+app.listen(3001);
 console.log('Server listening on port 3001');
-
-// Restart the server when it changes.
-if (module.hot) {
-  module.hot.dispose(() => {
-    server.close();
-  });
-
-  module.hot.accept();
-}

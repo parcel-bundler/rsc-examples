@@ -1,0 +1,27 @@
+{
+  "name": "navigation-parcel",
+  "description": "",
+  "version": "1.0.0",
+  "source": "server.tsx",
+  "server": "dist/server.js",
+  "targets": {
+    "server": {
+      "context": "react-server",
+      "includeNodeModules": {
+        "express": false
+      }
+    }
+  },
+  "scripts": {
+    "build": "rm -rf ../../.parcel-cache && rm -rf dist && parcel build --no-cache",
+    "start": "parcel"
+  },
+  "dependencies": {
+    "@parcel/rsc": "canary",
+    "express": "^4.18.2",
+    "navigation": "^6.2.0",
+    "navigation-react": "4.5.1-rsc.0",
+    "react": "canary",
+    "react-dom": "canary"
+  }
+}

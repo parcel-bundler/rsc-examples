@@ -20,7 +20,7 @@
     "@parcel/rsc": "canary",
     "express": "^4.18.2",
     "navigation": "^6.2.0",
-    "navigation-react": "4.5.1-rsc.0",
+    "navigation-react": "^4.5.1-rsc.1",
     "react": "canary",
     "react-dom": "canary"
   }

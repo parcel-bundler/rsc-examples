@@ -2,10 +2,10 @@
   "name": "parcel-rsc-server",
   "version": "0.0.0",
   "private": true,
-  "source": "src/server.tsx",
   "server": "dist/server.js",
   "targets": {
     "server": {
+      "source": "src/server.tsx",
       "context": "react-server",
       "includeNodeModules": {
         "express": false

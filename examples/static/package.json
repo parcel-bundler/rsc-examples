@@ -2,11 +2,10 @@
   "name": "parcel-rsc-static",
   "version": "0.0.0",
   "private": true,
-  "source": "pages/*.tsx",
   "targets": {
-    "default": {
-      "context": "react-server",
-      "scopeHoist": false
+    "react-static": {
+      "source": "pages/*.tsx",
+      "context": "react-server"
     }
   },
   "scripts": {
@@ -14,7 +13,6 @@
     "build": "parcel build"
   },
   "dependencies": {
-    "@parcel/config-react-static": "canary",
     "@parcel/rsc": "canary",
     "react": "canary",
     "react-dom": "canary"

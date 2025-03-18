@@ -14,11 +14,11 @@ This is a typical index file for a client rendered React app. It calls `createRo
 
 This is the root component of the client app. It renders some client components as normal, and uses `<Suspense>` to load a React Server Component.
 
-There is a small wrapper for the `RSC` component, which creates a `fetch` request to the server hosting the React Server Component. It uses `createFromFetch` from `react-server-dom-parcel/client` to create an RSC stream. Calling `use` on this promise causes React to suspend. Once the server component loads, it renders.
+`fetchRSC` from `@parcel/rsc/client` is a small `fetch` wrapper that loads an RSC payload from the server. Returning this promise from a component causes React to suspend. Once the server component loads, it renders.
 
 ### server/server.tsx
 
-This is the server entrypoint, built using Express. In its route handler, it creates an RSC stream using `renderToReadableStream` from `react-server-dom-parcel/server`. This renders to the RSC payload format, not to HTML, since the client app will be consuming it via `fetch` and not on initial page load.
+This is the server entrypoint, built using Express. In its route handler, it creates an RSC payload using `renderRSC` from `@parcel/rsc/node`. This renders to the RSC payload format, not to HTML, since the client app will be consuming it via `fetch` and not on initial page load.
 
 ### server/RSC.tsx
 

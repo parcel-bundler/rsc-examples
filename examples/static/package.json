@@ -13,7 +13,7 @@
     "build": "parcel build"
   },
   "dependencies": {
-    "@parcel/rsc": "canary",
+    "@parcel/rsc": "^2.14.0",
     "react": "canary",
     "react-dom": "canary"
   }

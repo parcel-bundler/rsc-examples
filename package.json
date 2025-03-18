@@ -13,11 +13,11 @@
     "@types/parcel-env": "^0.0.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "parcel": "canary",
+    "parcel": "^2.14.0",
     "process": "^0.11.10"
   },
   "devDependencies": {
-    "@parcel/packager-react-static": "canary",
-    "@parcel/transformer-react-static": "canary"
+    "@parcel/packager-react-static": "^2.14.0",
+    "@parcel/transformer-react-static": "^2.14.0"
   }
 }

@@ -1,0 +1,22 @@
+{
+  "name": "parcel-rsc-server-bun",
+  "private": true,
+  "version": "0.0.0",
+  "server": "dist/server.js",
+  "source": "src/server.tsx",
+  "targets": {
+    "server": {
+      "context": "react-server"
+    }
+  },
+  "scripts": {
+    "watch": "parcel watch",
+    "start": "bun --watch dist/server.js",
+    "build": "parcel build"
+  },
+  "dependencies": {
+    "@parcel/rsc": "^2.14.0",
+    "react": "canary",
+    "react-dom": "canary"
+  }
+}

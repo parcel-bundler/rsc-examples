@@ -8,6 +8,8 @@
     "packageExports": true
   },
   "dependencies": {
+    "@types/bun": "^1.1.16",
+    "@types/deno": "^2.0.0",
     "@types/express": "*",
     "@types/node": "^22.10.1",
     "@types/parcel-env": "^0.0.6",

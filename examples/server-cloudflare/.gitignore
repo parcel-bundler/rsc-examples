@@ -1,0 +1,4 @@
+.wrangler
+!/dist
+/dist/*
+!/dist/.assetsignore

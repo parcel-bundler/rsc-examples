@@ -12,3 +12,4 @@ In addition, there are examples showing how to use alternative runtimes.
 
 * [Bun](examples/server-bun)
 * [Deno](examples/server-deno)
+* [Cloudflare Workers](examples/server-cloudflare)

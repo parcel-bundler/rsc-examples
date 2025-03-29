@@ -1,0 +1,26 @@
+{
+	"$schema": "../../node_modules/wrangler/config-schema.json",
+  "compatibility_date": "2025-03-21",
+  // Enable Node.js compatibility so that AsyncLocalStorage works.
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "dist/server.js",
+  // Parcel will do the bundling. We don't need wrangler's default bundling.
+  "no_bundle": true,
+  // Serve the dist dir as static assets.
+  // Ideally this would be dist/client only, but Cloudflare doesn't have
+  // an option to mount the assets at a sub-path.
+  // Instead, make sure you have .assetsignore file inside dist to ensure that
+  // the server code isn't publicly accessible.
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
+  // Include all JS modules in the dist dir in the worker, not just the main entrypoint.
+  "base_dir": "dist",
+  "rules": [
+    {
+      "type": "ESModule",
+      "globs": ["**/*.js"]
+    }
+  ]
+}

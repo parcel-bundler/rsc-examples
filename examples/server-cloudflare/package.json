@@ -1,0 +1,25 @@
+{
+  "name": "parcel-rsc-server-cloudflare",
+  "private": true,
+  "version": "0.0.0",
+  "server": "dist/server.js",
+  "source": "src/server.tsx",
+  "targets": {
+    "server": {
+      "context": "react-server",
+      "outputFormat": "esmodule"
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf dist/{client,server*}",
+    "watch": "parcel watch",
+    "start": "wrangler dev",
+    "build": "yarn clean && parcel build"
+  },
+  "dependencies": {
+    "@parcel/rsc": "^2.14.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "wrangler": "^4.4.0"
+  }
+}

@@ -1,5 +1,7 @@
 // Server dependencies.
 import {renderRequest, callAction} from '@parcel/rsc/server';
+// @ts-ignore
+import {serveDir} from "jsr:@std/http/file-server";
 
 // Page components. These must have "use server-entry" so they are treated as code splitting entry points.
 import {Page} from './Page';
@@ -21,21 +23,7 @@ Deno.serve(async (req: Request) => {
       return new Response('Unknown method', {status: 500});
     }
   } else if (pathname.startsWith('/client')) {
-    // TODO: use a better file server.
-    // Parcel does not yet support "jsr:" dependencies.
-    try {
-      let file = await Deno.open('dist' + pathname);
-      return new Response(file.readable, {
-        headers: {
-          'Content-Type': 
-            pathname.endsWith('.js') ? 'application/javascript'
-            : pathname.endsWith('.css') ? 'text/css'
-            : 'application/octet-stream'
-        }
-      });
-    } catch (err) {
-      return new Response('Not found', {status: 404});
-    }
+    return serveDir(req, {fsRoot: 'dist'});
   } else {
     return new Response('Not found', {status: 404});
   }

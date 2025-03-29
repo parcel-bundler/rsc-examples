@@ -5,6 +5,7 @@
     "jsr:@std/encoding@^1.0.7": "1.0.7",
     "jsr:@std/fmt@^1.0.5": "1.0.6",
     "jsr:@std/html@^1.0.3": "1.0.3",
+    "jsr:@std/http@*": "1.0.13",
     "jsr:@std/http@^1.0.13": "1.0.13",
     "jsr:@std/media-types@^1.1.0": "1.1.0",
     "jsr:@std/net@^1.0.4": "1.0.4",

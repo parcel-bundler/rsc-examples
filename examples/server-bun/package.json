@@ -15,7 +15,7 @@
     "build": "parcel build"
   },
   "dependencies": {
-    "@parcel/rsc": "^2.14.3",
+    "@parcel/rsc": "^2.14.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   }
